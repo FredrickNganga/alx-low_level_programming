@@ -3,24 +3,13 @@
 /**
  * main - Entry point
  *
- * Description : Uses inline assembly to print strings using syscall function (x86_64)
+ * Description:  prints exactly "and that piece of art is useful\" - Dora Korpar, 2015-10-19, followed by a new line, to the standard error"
  *
- * Return: Always 1 (Success)
+ * Return: Always 1 (Error)
  */
 
 int main(void)
 {
-	char *s = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-	long l = 59;
-	long fd = 1;
-	long syscall = 1;
-	long ret = 0;
-
-	_asm_ (syscall
-		: "=a" (ret)
-      		: "a"  (syscall),
-	 	"D" (fd),
-	 	"S" (s)
-	  	"d" (l));
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
 	return (1);
 }
