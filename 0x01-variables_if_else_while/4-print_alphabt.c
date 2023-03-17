@@ -1,5 +1,3 @@
-able File  26 lines (23 sloc)  341 Bytes
-
 #include <stdio.h>
 #include <unistd.h>
 
